@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3hsvkpbnafbe"]
+
+[ext_resource type="AudioStream" uid="uid://btt71qw07cvm1" path="res://bg_music/Stream Loops 2024-01-24_01.ogg" id="1_0frps"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_0frps")
+autoplay = true

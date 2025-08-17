@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqan544incjw4"]
+
+[ext_resource type="Texture2D" uid="uid://b3t2rtqvefaw3" path="res://saw/Chain.png" id="1_egag1"]
+
+[node name="chain" type="Sprite2D"]
+texture = ExtResource("1_egag1")

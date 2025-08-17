@@ -1,0 +1,186 @@
+[gd_scene load_steps=9 format=3 uid="uid://c75a43dyh58d"]
+
+[ext_resource type="Script" path="res://scripts/learning_materials.gd" id="1_u0ab6"]
+[ext_resource type="Texture2D" uid="uid://l3swgx6x43kk" path="res://back.png" id="2_hcahj"]
+[ext_resource type="Texture2D" uid="uid://c3hb7luxw68rk" path="res://Learning Materials/Lesson1/Lesson-1-01.png" id="3_mgxie"]
+[ext_resource type="Texture2D" uid="uid://bkchnlf3k88vw" path="res://Learning Materials/Lesson2/Lesson-2-01.png" id="4_otguh"]
+[ext_resource type="Texture2D" uid="uid://c20nnki1rm55a" path="res://Learning Materials/Lesson3/Lesson-3-01.png" id="5_lynqk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ja0k7"]
+texture = ExtResource("3_mgxie")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w0hvt"]
+texture = ExtResource("4_otguh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bsadj"]
+texture = ExtResource("5_lynqk")
+
+[node name="Learning Materials" type="Node"]
+script = ExtResource("1_u0ab6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_hcahj")
+expand_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.5
+offset_right = 75.5
+offset_bottom = 51.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 37
+text = "Learning Materials
+"
+metadata/_edit_lock_ = true
+
+[node name="Lesson1" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 214.0
+offset_top = 129.0
+offset_right = 449.0
+offset_bottom = 271.0
+
+[node name="Panel" type="Panel" parent="Lesson1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ja0k7")
+
+[node name="lesson1" type="Button" parent="Lesson1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Label" type="Label" parent="Lesson1"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 157.0
+offset_right = 179.0
+offset_bottom = 193.0
+theme_override_font_sizes/font_size = 20
+text = "Lesson-1
+"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="lesson2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 515.0
+offset_top = 130.0
+offset_right = 750.0
+offset_bottom = 272.0
+
+[node name="Panel" type="Panel" parent="lesson2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_w0hvt")
+
+[node name="lesson2" type="Button" parent="lesson2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Label" type="Label" parent="lesson2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -63.5
+offset_top = 11.0
+offset_right = 70.5
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "Lesson-2"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Level3" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 805.0
+offset_top = 136.0
+offset_right = 1040.0
+offset_bottom = 278.0
+
+[node name="Panel" type="Panel" parent="Level3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bsadj")
+
+[node name="lesson3" type="Button" parent="Level3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Label" type="Label" parent="Level3"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 144.0
+offset_right = 187.0
+offset_bottom = 180.0
+theme_override_font_sizes/font_size = 20
+text = "Lesson-3
+"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 52.0
+offset_top = 568.0
+offset_right = 220.0
+offset_bottom = 621.0
+
+[node name="main menu" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Main Menu
+"
+flat = true
+
+[connection signal="pressed" from="Lesson1/lesson1" to="." method="_on_lesson_1_pressed"]
+[connection signal="pressed" from="lesson2/lesson2" to="." method="_on_lesson_2_pressed"]
+[connection signal="pressed" from="Level3/lesson3" to="." method="_on_lesson_3_pressed"]
+[connection signal="pressed" from="Control/main menu" to="." method="_on_main_menu_pressed"]

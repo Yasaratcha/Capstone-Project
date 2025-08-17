@@ -1,0 +1,203 @@
+[gd_scene load_steps=9 format=3 uid="uid://bjp04gmxknuft"]
+
+[ext_resource type="Script" path="res://scripts/stage 3.gd" id="1_emxnc"]
+[ext_resource type="Texture2D" uid="uid://l3swgx6x43kk" path="res://back.png" id="2_r8hsr"]
+[ext_resource type="Texture2D" uid="uid://bhvegl7a3lnf3" path="res://Levels_img/img_S3 lvl1.png" id="3_qgpn3"]
+[ext_resource type="Texture2D" uid="uid://p35ve6sb2r0v" path="res://Levels_img/img_S3 lvl2.png" id="4_u2snw"]
+[ext_resource type="Texture2D" uid="uid://bky5t4mqt23rq" path="res://Levels_img/img_S3 lvl3.png" id="5_yqvgi"]
+[ext_resource type="Texture2D" uid="uid://drtswid22bbo" path="res://Levels_img/img_S3 lvl4.png" id="6_xrh6e"]
+[ext_resource type="Texture2D" uid="uid://8rvieeinjw17" path="res://Levels_img/img_S3 lvl5.png" id="7_s20eu"]
+[ext_resource type="Texture2D" uid="uid://cawhejr4ljidh" path="res://Back Square Button.png" id="9_up3ji"]
+
+[node name="stage3" type="Node"]
+script = ExtResource("1_emxnc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_r8hsr")
+expand_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.5
+offset_right = 75.5
+offset_bottom = 51.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 37
+text = "Stage - 3
+"
+metadata/_edit_lock_ = true
+
+[node name="Levels" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 287.0
+offset_top = 127.0
+offset_right = 522.0
+offset_bottom = 269.0
+
+[node name="level 1 button" type="Button" parent="Levels"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("3_qgpn3")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="Levels/level 1 button"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 157.0
+offset_right = 179.0
+offset_bottom = 193.0
+theme_override_font_sizes/font_size = 20
+text = "Level-1"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="level 2 button" type="Button" parent="Levels"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 285.0
+offset_top = -1.0
+offset_right = 285.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("4_u2snw")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="Levels/level 2 button"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -63.5
+offset_top = 11.0
+offset_right = 70.5
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "Level-2"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="level 3 button" type="Button" parent="Levels"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 580.0
+offset_top = 2.0
+offset_right = 580.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("5_yqvgi")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="Levels/level 3 button"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 144.0
+offset_right = 187.0
+offset_bottom = 180.0
+theme_override_font_sizes/font_size = 20
+text = "Level-3
+"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="level 4 button" type="Button" parent="Levels"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 121.0
+offset_top = 234.0
+offset_right = 121.0
+offset_bottom = 234.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("6_xrh6e")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="Levels/level 4 button"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 144.0
+offset_right = 187.0
+offset_bottom = 180.0
+theme_override_font_sizes/font_size = 20
+text = "Level-4
+"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="level 5 button" type="Button" parent="Levels"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 485.0
+offset_top = 233.0
+offset_right = 485.0
+offset_bottom = 233.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("7_s20eu")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="Levels/level 5 button"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 144.0
+offset_right = 187.0
+offset_bottom = 180.0
+theme_override_font_sizes/font_size = 20
+text = "Level-5
+"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Control2" type="Control" parent="."]
+custom_minimum_size = Vector2(76, 71)
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -71.0
+offset_right = 76.0
+grow_vertical = 0
+
+[node name="back" type="Button" parent="Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("9_up3ji")
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="Control2/back" to="." method="_on_back_pressed"]

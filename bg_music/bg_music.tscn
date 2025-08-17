@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbd0mydk23gd0"]
+
+[ext_resource type="AudioStream" uid="uid://dtaajbs3kjynf" path="res://bg_music/Ludum Dare 38 - 09.ogg" id="1_hugtx"]
+
+[sub_resource type="GDScript" id="GDScript_1nwql"]
+script/source = "extends AudioStreamPlayer
+
+func _ready():
+	play()  # Start playing the background music when the game starts
+
+
+# Function to handle the CheckButton press
+func _on_check_button_pressed():
+	if playing:  # If the background music is playing
+		stop()   # Stop the music
+	else:        # If the background music is stopped
+		play()   # Play the music again
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_hugtx")
+autoplay = true
+bus = &"music"
+script = SubResource("GDScript_1nwql")

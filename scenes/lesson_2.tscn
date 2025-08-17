@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://banr7jt3mqjhe"]
+
+[ext_resource type="Script" path="res://scripts/lesson2.gd" id="1_hpypi"]
+[ext_resource type="Texture2D" uid="uid://ctnsctaaqiq66" path="res://Next Square Button.png" id="2_tc06c"]
+[ext_resource type="Texture2D" uid="uid://cawhejr4ljidh" path="res://Back Square Button.png" id="3_3wo7e"]
+[ext_resource type="Texture2D" uid="uid://c3cfux6ae3e2c" path="res://X Square Button.png" id="4_0rjnb"]
+
+[node name="Lesson2" type="Node2D"]
+script = ExtResource("1_hpypi")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1455.0
+offset_bottom = 662.0
+expand_mode = 2
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 28.0
+offset_top = 547.0
+offset_right = 117.0
+offset_bottom = 632.0
+metadata/_edit_group_ = true
+
+[node name="previous_page" type="Button" parent="Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("3_3wo7e")
+flat = true
+expand_icon = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1327.0
+offset_top = 547.0
+offset_right = 1416.0
+offset_bottom = 632.0
+metadata/_edit_group_ = true
+
+[node name="next_page" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("2_tc06c")
+flat = true
+expand_icon = true
+
+[node name="Control3" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1385.0
+offset_top = 25.0
+offset_right = 1425.0
+offset_bottom = 65.0
+metadata/_edit_group_ = true
+
+[node name="exit" type="Button" parent="Control3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("4_0rjnb")
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="Control2/previous_page" to="." method="_on_previous_page_pressed"]
+[connection signal="pressed" from="Control/next_page" to="." method="_on_next_page_pressed"]
+[connection signal="pressed" from="Control3/exit" to="." method="_on_exit_pressed"]

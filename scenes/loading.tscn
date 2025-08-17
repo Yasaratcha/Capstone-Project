@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://rwn7gb4td74m"]
+
+[ext_resource type="Script" path="res://scripts/loading.gd" id="1_pqgkk"]
+[ext_resource type="Texture2D" uid="uid://ccvdubyvhkvin" path="res://sunset.png" id="2_v4xwa"]
+
+[node name="loading" type="CanvasLayer"]
+script = ExtResource("1_pqgkk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 650.0
+texture = ExtResource("2_v4xwa")
+expand_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 354.0
+offset_top = 552.0
+offset_right = 772.0
+offset_bottom = 589.0

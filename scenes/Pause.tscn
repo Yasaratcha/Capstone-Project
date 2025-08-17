@@ -1,0 +1,155 @@
+[gd_scene load_steps=9 format=3 uid="uid://c0g3h0x1nqvd0"]
+
+[ext_resource type="Script" path="res://scripts/Pause.gd" id="1_odt1g"]
+[ext_resource type="Texture2D" uid="uid://vgcdky1lqqu0" path="res://Settings.png" id="2_o5dkc"]
+[ext_resource type="Texture2D" uid="uid://djpqnfe8cjqtq" path="res://Play Square Button.png" id="3_1o3s3"]
+[ext_resource type="PackedScene" uid="uid://bbd0mydk23gd0" path="res://bg_music/bg_music.tscn" id="3_gfmn0"]
+[ext_resource type="Script" path="res://scenes/VolumeSlider.gd" id="3_kd1uc"]
+[ext_resource type="Texture2D" uid="uid://c3fvphvcfjrym" path="res://Return Square Button.png" id="4_4yxek"]
+[ext_resource type="Texture2D" uid="uid://bi6lsllfvp3gb" path="res://Home Square Button.png" id="5_aujwn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k6yep"]
+bg_color = Color(0.666667, 0.72549, 0.952941, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.443137, 0.443137, 0.443137, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Pause" type="Node"]
+script = ExtResource("1_odt1g")
+
+[node name="settings" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -101.0
+offset_top = 18.0
+offset_right = -26.0
+offset_bottom = 95.0
+grow_horizontal = 0
+icon = ExtResource("2_o5dkc")
+flat = true
+expand_icon = true
+
+[node name="PauseMenu" type="Control" parent="."]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -152.0
+offset_right = 132.0
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -6.0
+offset_right = 9.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k6yep")
+
+[node name="music_label" type="Label" parent="PauseMenu/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -108.0
+offset_right = 105.0
+offset_bottom = -76.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 21
+text = "Music
+"
+horizontal_alignment = 1
+
+[node name="music" type="HSlider" parent="PauseMenu/Panel"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 35.0
+offset_right = 203.0
+offset_bottom = 104.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_kd1uc")
+bus_name = "music"
+
+[node name="AudioStreamPlayer" parent="PauseMenu/Panel/music" instance=ExtResource("3_gfmn0")]
+
+[node name="sfx_label" type="Label" parent="PauseMenu/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 38.0
+offset_top = -40.0
+offset_right = 174.0
+offset_bottom = -8.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 21
+text = "Sound Effects
+"
+horizontal_alignment = 1
+
+[node name="sfx" type="HSlider" parent="PauseMenu/Panel"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 103.0
+offset_right = 206.0
+offset_bottom = 172.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_kd1uc")
+bus_name = "sfx"
+
+[node name="resume" type="Button" parent="PauseMenu/Panel"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 171.0
+offset_right = 90.0
+offset_bottom = 227.0
+icon = ExtResource("3_1o3s3")
+flat = true
+expand_icon = true
+
+[node name="restart" type="Button" parent="PauseMenu/Panel"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 171.0
+offset_right = 162.0
+offset_bottom = 227.0
+icon = ExtResource("4_4yxek")
+flat = true
+expand_icon = true
+
+[node name="quit" type="Button" parent="PauseMenu/Panel"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 169.0
+offset_right = 237.0
+offset_bottom = 228.0
+icon = ExtResource("5_aujwn")
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="PauseMenu/Panel/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseMenu/Panel/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PauseMenu/Panel/quit" to="." method="_on_quit_pressed"]

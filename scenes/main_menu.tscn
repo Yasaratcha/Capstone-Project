@@ -1,0 +1,167 @@
+[gd_scene load_steps=14 format=3 uid="uid://o3jr5qpoarso"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_q6sb0"]
+[ext_resource type="Texture2D" uid="uid://bdlqrlmalkt6e" path="res://mind-quest logo.png" id="2_oj25y"]
+[ext_resource type="Script" path="res://scripts/ParallaxBackground.gd" id="3_xlpdj"]
+[ext_resource type="Texture2D" uid="uid://l3swgx6x43kk" path="res://back.png" id="4_crmtd"]
+[ext_resource type="Texture2D" uid="uid://ccmoxu04wt0th" path="res://middle.png" id="5_iii12"]
+[ext_resource type="Texture2D" uid="uid://c1d5taqd2tmbw" path="res://front.png" id="6_mrjeh"]
+[ext_resource type="PackedScene" uid="uid://d3hsvkpbnafbe" path="res://bg_music/main_menu_bg_music.tscn" id="7_prvtc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6iiny"]
+bg_color = Color(0.2, 0.470588, 0.780392, 1)
+border_width_bottom = 5
+border_color = Color(0.117647, 0.333333, 0.580392, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0.117647, 0.333333, 0.580392, 1)
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="Theme" id="Theme_dnpiv"]
+Button/styles/normal = SubResource("StyleBoxFlat_6iiny")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbp30"]
+bg_color = Color(0.2, 0.470588, 0.780392, 1)
+border_width_bottom = 5
+border_color = Color(0.117647, 0.333333, 0.580392, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0.117647, 0.333333, 0.580392, 1)
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="Theme" id="Theme_2ccav"]
+Button/styles/normal = SubResource("StyleBoxFlat_tbp30")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_osr4w"]
+bg_color = Color(0.2, 0.470588, 0.780392, 1)
+border_width_bottom = 5
+border_color = Color(0.117647, 0.333333, 0.580392, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0.117647, 0.333333, 0.580392, 1)
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="Theme" id="Theme_6txv0"]
+Button/styles/normal = SubResource("StyleBoxFlat_osr4w")
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_q6sb0")
+metadata/_edit_horizontal_guides_ = [211.0]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.0
+offset_top = -253.0
+offset_right = 224.0
+offset_bottom = -163.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_oj25y")
+
+[node name="Play" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 50)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = -115.0
+offset_right = 87.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_dnpiv")
+text = "Play"
+
+[node name="Learning Materials" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 50)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -22.0
+offset_right = 90.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_2ccav")
+text = "Learning Materials"
+
+[node name="Exit" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 50)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = 59.0
+offset_right = 91.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_6txv0")
+text = "Exit"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("3_xlpdj")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, 1)
+motion_mirroring = Vector2(1125, 0)
+
+[node name="Back" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(582.5, 328)
+scale = Vector2(1.9809, 2.04321)
+texture = ExtResource("4_crmtd")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.7, 1)
+motion_mirroring = Vector2(1125, 0)
+
+[node name="Middle" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(293, 436)
+texture = ExtResource("5_iii12")
+
+[node name="Middle2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(511, 420)
+texture = ExtResource("5_iii12")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1125, 0)
+
+[node name="Front" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(435, 442)
+texture = ExtResource("6_mrjeh")
+
+[node name="Front2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(297, 430)
+texture = ExtResource("6_mrjeh")
+metadata/_edit_lock_ = true
+
+[node name="Front3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(865, 442)
+texture = ExtResource("6_mrjeh")
+metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("7_prvtc")]
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Learning Materials" to="." method="_on_learning_materials_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
