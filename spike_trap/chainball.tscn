@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1xhg0olcjb72"]
+
+[ext_resource type="Script" path="res://spike_trap/chainball.gd" id="1_n0b1c"]
+[ext_resource type="Texture2D" uid="uid://ch0tf3lq2m652" path="res://spike_trap/Spiked Ball.png" id="2_j747m"]
+
+[sub_resource type="Curve" id="Curve_45ep1"]
+min_value = -90.0
+max_value = 90.0
+_data = [Vector2(0, 87.1602), 0.0, 0.0, 0, 0, Vector2(0.522293, -88.1726), 0.0, 0.0, 0, 0, Vector2(0.987261, 90), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h7fcy"]
+radius = 23.0868
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k8av6"]
+radius = 18.0
+
+[node name="chainball" type="Node2D"]
+script = ExtResource("1_n0b1c")
+length = 10
+distance_between_chains = 14
+curve = SubResource("Curve_45ep1")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3, 6)
+shape = SubResource("CircleShape2D_h7fcy")
+
+[node name="hitbox" type="Area2D" parent="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D/hitbox"]
+position = Vector2(3, 6)
+scale = Vector2(1.95512, 1.84904)
+texture = ExtResource("2_j747m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/hitbox"]
+position = Vector2(3, 7)
+shape = SubResource("CircleShape2D_k8av6")
+
+[connection signal="body_entered" from="Area2D/hitbox" to="." method="_on_hitbox_body_entered"]

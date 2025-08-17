@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccyr38gj2ekkb"]
+
+[ext_resource type="AudioStream" uid="uid://dn6ujvug23mpr" path="res://sfx/wrong.mp3" id="1_jvosm"]
+
+[node name="WrongSfx" type="AudioStreamPlayer"]
+stream = ExtResource("1_jvosm")
+autoplay = true

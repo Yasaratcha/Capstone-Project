@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://852ve1831vsk"]
+
+[ext_resource type="Texture2D" uid="uid://b7lj0hngsh1pc" path="res://spike_trap/Chain.png" id="1_vq6d8"]
+
+[node name="spike_chain" type="Sprite2D"]
+position = Vector2(6, 7)
+scale = Vector2(2.5, 2.75)
+texture = ExtResource("1_vq6d8")
